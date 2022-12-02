@@ -29,17 +29,6 @@
     @section('extra-js')
         <script>
 
-            /*
-            Q. How can I export the whole table when using serverSide and Buttons.
-
-            A. Buttons is a client-side process, so it can only export the data available at the client-side.
-            When server-side processing is enabled, the full data set is not held on the client-side,
-            so only the visible data can be exported. You can either: 1. Use a server-side process to
-            create the files to download (recommended) or 2. Disable server-side processing.
-
-            reference: https://datatables.net/faqs/index#Server-side-processing
-             */
-
             $(document).ready(function () {
                 $('#datatable').DataTable({
                     "processing": true,

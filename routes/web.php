@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
-Route::get('/dashboard-datatables', [DashboardController::class, 'datatable'])->middleware(['auth'])->name('dashboard.datatables');
+//  LOGIN DASHBOARD 
+Route::get('/dashboard', function( ) {
+    return view('dashboard.index');
+})->middleware('auth');
+
+
+Route::get('/dashboard/index', [DataController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard/data/index', [DataController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard/data/dashboard-datatables', [DataController::class, 'datatable'])->middleware(['auth'])->name('dashboard.datatables');
 
 require __DIR__.'/auth.php';

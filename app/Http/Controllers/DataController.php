@@ -6,11 +6,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
-class DashboardController extends Controller
+class DataController extends Controller
 {
     public function index()
     {
-        return view('dashboard');
+        return view('dashboard.data.index');
     }
 
     /**
