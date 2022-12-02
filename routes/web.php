@@ -18,13 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//  LOGIN DASHBOARD 
-Route::get('/dashboard', function( ) {
-    return view('dashboard.index');
-})->middleware('auth');
 
 
-Route::get('/dashboard/index', [DataController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/dashboard/data/index', [DataController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/dashboard/data/dashboard-datatables', [DataController::class, 'datatable'])->middleware(['auth'])->name('dashboard.datatables');
 

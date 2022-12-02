@@ -17,6 +17,12 @@
                             <th>ID</th>
                             <th>Full Name</th>
                             <th>Email</th>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
                         </tr>
                         </thead>
                         <tbody></tbody>
@@ -32,12 +38,16 @@
             $(document).ready(function () {
                 $('#datatable').DataTable({
                     "processing": true,
-                    "serverSide": true,
+                    "serverSide": true,hal
                     "ajax": "{{ route('dashboard.datatables') }}",
                     "columns": [
                         {"data": "id"},
-                        {"data": "name"},
-                        {"data": "email"}
+                        {"data": "nama_lengkap"},
+                        {"data": "alamat_domisili"},
+                        {"data": "jenis_kelamin"},
+                        {"data": "pendidikan_terakhir"},
+                        {"data": "jurusan"},
+                        {"data": "hari"}
                     ],
                     lengthMenu: [
                         [10, 25, 50, 100, -1],
